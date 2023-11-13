@@ -22,6 +22,7 @@ public class MainAdminGui extends javax.swing.JFrame {
         rentLabel = new javax.swing.JLabel();
         vehicleSeparator = new javax.swing.JSeparator();
         rentSeparator = new javax.swing.JSeparator();
+        logOutLabel = new javax.swing.JLabel();
         TabbedPane = new javax.swing.JTabbedPane();
         vehiclesPanel = new javax.swing.JPanel();
         VehicleInternal = new javax.swing.JPanel();
@@ -94,6 +95,18 @@ public class MainAdminGui extends javax.swing.JFrame {
 
         rentSeparator.setForeground(new java.awt.Color(250, 250, 255));
 
+        logOutLabel.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
+        logOutLabel.setForeground(new java.awt.Color(250, 249, 249));
+        logOutLabel.setText("Log out");
+        logOutLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logOutLabelMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                logOutLabelMousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout navBarPanelLayout = new javax.swing.GroupLayout(navBarPanel);
         navBarPanel.setLayout(navBarPanelLayout);
         navBarPanelLayout.setHorizontalGroup(
@@ -111,7 +124,8 @@ public class MainAdminGui extends javax.swing.JFrame {
                         .addGroup(navBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(vehiclesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(vehicleSeparator)
-                            .addComponent(rentSeparator))))
+                            .addComponent(rentSeparator)
+                            .addComponent(logOutLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         navBarPanelLayout.setVerticalGroup(
@@ -127,7 +141,9 @@ public class MainAdminGui extends javax.swing.JFrame {
                 .addComponent(rentLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rentSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                .addComponent(logOutLabel)
+                .addGap(26, 26, 26))
         );
 
         getContentPane().add(navBarPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 130, 560));
@@ -501,7 +517,16 @@ public class MainAdminGui extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         MainAdminController.fillVehiclesTable();
+        rentSeparator.setVisible(false);
     }//GEN-LAST:event_formWindowOpened
+
+    private void logOutLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutLabelMouseClicked
+        MainAdminController.logOut();
+    }//GEN-LAST:event_logOutLabelMouseClicked
+
+    private void logOutLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutLabelMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logOutLabelMousePressed
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -528,6 +553,7 @@ public class MainAdminGui extends javax.swing.JFrame {
     private javax.swing.JPanel infoVehiclePanel;
     private javax.swing.JLabel licenseLabel;
     private javax.swing.JTextField licenseTextField;
+    private javax.swing.JLabel logOutLabel;
     private javax.swing.JLabel mileageLabel;
     private javax.swing.JTextField mileageTextField;
     private javax.swing.JLabel modelLabel;

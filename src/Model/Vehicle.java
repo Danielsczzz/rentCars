@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Vehicle {
 
-    private int rowId;
+    private int id;
     private String licensePlate;
     private int model;
     private String vehicleBrand;
@@ -25,7 +25,8 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(String licensePlate, int model, String vehicleBrand, String description, int mileage, String type) {
+    public Vehicle(int id, String licensePlate, int model, String vehicleBrand, String description, int mileage, String type) {
+        this.id = id;
         this.licensePlate = licensePlate;
         this.model = model;
         this.vehicleBrand = vehicleBrand;
@@ -34,12 +35,12 @@ public class Vehicle {
         this.rented = false;
     }
 
-    public int getRowId() {
-        return rowId;
+    public int getId() {
+        return id;
     }
 
-    public void setRowId(int rowId) {
-        this.rowId = rowId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getLicensePlate() {
@@ -105,7 +106,7 @@ public class Vehicle {
             ResultSet rs = s.executeQuery("SELECT * FROM vehicles");
             while (rs.next()) {
                 Vehicle v = new Vehicle();
-                v.setRowId(rs.getInt("id"));
+                v.setId(rs.getInt("id"));
                 v.setLicensePlate(rs.getString("license_plate"));
                 v.setVehicleBrand(rs.getString("brand"));
                 v.setDescription(rs.getString("description"));
@@ -150,7 +151,7 @@ public class Vehicle {
             query.setString(4, v.getDescription());
             query.setInt(5, vehicleType);
             query.setInt(6, v.getMileage());
-            query.setInt(7, v.getRowId());
+            query.setInt(7, v.getId());
             boolean dbAnswer = query.executeUpdate() == 1;
             if (dbAnswer) {
                 JOptionPane.showMessageDialog(null, "Record updated successfully");
@@ -181,6 +182,5 @@ public class Vehicle {
         }
 
     }
-
 
 }

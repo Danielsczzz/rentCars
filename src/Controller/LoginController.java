@@ -20,6 +20,11 @@ public class LoginController {
         SignUpController.showSignUp();
     }
 
+    public static void clearFields() {
+        loginFrame.getEmailField().setText("");
+        loginFrame.getPasswordField().setText("");
+    }
+
     public static void loginEvent() {
         String clientEmail = loginFrame.getEmailField().getText();
         String clientPassword = loginFrame.getPasswordField().getText();
@@ -31,6 +36,7 @@ public class LoginController {
                 MainAdminController.showMainAdminFrame();
                 LoginController.hideLogin();
             } else {
+                MainClientController.setUser(userDB);
                 MainClientController.showMainClientFrame();
                 LoginController.hideLogin();
             }

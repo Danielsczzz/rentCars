@@ -20,6 +20,12 @@ public class MainAdminController {
         mainAdminFrame.setVisible(false);
     }
 
+    public static void logOut() {
+        mainAdminFrame.setVisible(false);
+        LoginController.clearFields();
+        LoginController.showLogin();
+    }
+
     public static void fillVehiclesTable() {
         DefaultTableModel tableData = (DefaultTableModel) mainAdminFrame.getVehiclesTable().getModel();
         tableData.setNumRows(0);
@@ -27,7 +33,7 @@ public class MainAdminController {
         ArrayList<Vehicle> vehicles = Vehicle.getVehiclesDB();
         for (Vehicle v : vehicles) {
             Object[] row = new Object[7];
-            row[0] = v.getRowId();
+            row[0] = v.getId();
             row[1] = v.getType();
             row[2] = v.getLicensePlate();
             row[3] = v.getVehicleBrand();
@@ -105,7 +111,7 @@ public class MainAdminController {
             int type = mainAdminFrame.getTypeComboBox().getSelectedIndex();
             if (MainAdminController.validations(licensePlate, brand, description, model, mileage, type)) {
                 Vehicle v = new Vehicle();
-                v.setRowId(rowId);
+                v.setId(rowId);
                 v.setLicensePlate(licensePlate);
                 v.setVehicleBrand(brand);
                 v.setDescription(description);
@@ -148,7 +154,7 @@ public class MainAdminController {
     }
 
     private static boolean validateIntegerInput(String input) {
-        Pattern p = Pattern.compile("[0-9]+");
+        Pattern p = Pattern.compile("^[0-9]+$");
         Matcher match = p.matcher(input);
 
         return match.find();
@@ -161,7 +167,7 @@ public class MainAdminController {
         } else if ((type == 1 && !validateCarLicense(licensePlate)) || (type == 2 && !validateBikeLicense(licensePlate))) {
             JOptionPane.showMessageDialog(null, "The license plate do not corresponse with the vehicle", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
             return false;
-        } else if (!validateIntegerInput(model) || !validateIntegerInput(model)) {
+        } else if (!validateIntegerInput(model) || !validateIntegerInput(mileage)) {
             JOptionPane.showMessageDialog(null, "Please enter valid number values.", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
             return false;
         } else if (Integer.parseInt(model) > 2023 || Integer.parseInt(model) < 1950) {

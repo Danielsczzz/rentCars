@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 
 public class User {
 
+    protected int id;
     protected String email;
     protected String password;
     protected boolean admin;
@@ -15,10 +16,19 @@ public class User {
     public User() {
     }
 
-    public User(String email, String password, boolean admin) {
+    public User(int id, String email, String password, boolean admin) {
+        this.id = id;
         this.email = email;
         this.password = password;
         this.admin = admin;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -62,7 +72,7 @@ public class User {
     }
 
     public static User getUserDB(String email, String password) {
-        String stringQuery = "SELECT email, password, admin FROM users WHERE email=? AND password=?";
+        String stringQuery = "SELECT * FROM users WHERE email=? AND password=?";
         try {
             PreparedStatement query = c.prepareStatement(stringQuery);
             query.setString(1, email);
@@ -70,10 +80,11 @@ public class User {
 
             ResultSet rs = query.executeQuery();
             if (rs.next()) {
-                String emailUserDB = rs.getString(1);
-                String passwordUserDB = rs.getString(2);
-                boolean isAdminUserDB = rs.getBoolean(3);
-                return new User(emailUserDB, passwordUserDB, isAdminUserDB);
+                int idUserDB = rs.getInt(1);
+                String emailUserDB = rs.getString(2);
+                String passwordUserDB = rs.getString(3);
+                boolean isAdminUserDB = rs.getBoolean(4);
+                return new User(idUserDB, emailUserDB, passwordUserDB, isAdminUserDB);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
