@@ -61,6 +61,7 @@ public class MainClientController {
 
                 mainClientFrame.getPreviewPriceTextField().setText("");
                 mainClientFrame.getReturnDateChooser().setDate(null);
+                mainClientFrame.getInvoiceTextArea().setText("");
 
                 int id = Integer.parseInt(tableData.getValueAt(nrow, 0).toString());
                 String type = tableData.getValueAt(nrow, 1).toString();
@@ -210,5 +211,66 @@ public class MainClientController {
             return false;
         }
         return true;
+    }
+
+    public static void validateRents() {
+        ArrayList<Rent> userRents = Rent.getUserRents(user.getId());
+
+        if (userRents.size() < 1) {
+            JOptionPane.showMessageDialog(null, "You don't have any rent at this moment.", "ERROR_MESSAGE", JOptionPane.ERROR_MESSAGE);
+        } else if (userRents.size() == 1) {
+            int idVehicle1 = userRents.get(0).getIdVehicle();
+            Vehicle vehicle = Vehicle.getVehicleDB(idVehicle1);
+            String vehicleInfo = String.format("%s %s %s", vehicle.getType(), vehicle.getVehicleBrand(), vehicle.getDescription());
+            mainClientFrame.getInfoVehicle1value().setText(vehicleInfo);
+            mainClientFrame.getLicense1Value().setText(vehicle.getLicensePlate());
+            mainClientFrame.getModel1Value().setText("" + vehicle.getModel());
+            mainClientFrame.getOrderDate1RentValue().setText("" + userRents.get(0).getOrderDate());
+            mainClientFrame.getLimitDate1rentValue().setText("" + userRents.get(0).getLimitDate());
+            mainClientFrame.getRentPrice1Value().setText(String.format("$%.2f", userRents.get(0).getPrice()));
+
+            mainClientFrame.getInfoVehicle2value().setVisible(false);
+            mainClientFrame.getLicense2rentLabel().setVisible(false);
+            mainClientFrame.getLicense2rentValue().setVisible(false);
+            mainClientFrame.getModel2rentLabel().setVisible(false);
+            mainClientFrame.getModel2rentValue().setVisible(false);
+            mainClientFrame.getOrderDate2rentLabel().setVisible(false);
+            mainClientFrame.getOrderDate2RentValue().setVisible(false);
+            mainClientFrame.getLimitDate2rentLabel().setVisible(false);
+            mainClientFrame.getLimitDate2rentValue().setVisible(false);
+            mainClientFrame.getRentPrice2label().setVisible(false);
+            mainClientFrame.getRentPrice2Value().setVisible(false);
+            mainClientFrame.getReturn2Button().setVisible(false);
+            mainClientFrame.getTabbedPane().setSelectedIndex(2);
+
+        } else {
+            int idVehicle1 = userRents.get(0).getIdVehicle();
+            Vehicle vehicle = Vehicle.getVehicleDB(idVehicle1);
+            String vehicleInfo = String.format("%s %s %s", vehicle.getType(), vehicle.getVehicleBrand(), vehicle.getDescription());
+            mainClientFrame.getInfoVehicle1value().setText(vehicleInfo);
+            mainClientFrame.getLicense1Value().setText(vehicle.getLicensePlate());
+            mainClientFrame.getModel1Value().setText("" + vehicle.getModel());
+            mainClientFrame.getOrderDate1RentValue().setText("" + userRents.get(0).getOrderDate());
+            mainClientFrame.getLimitDate1rentValue().setText("" + userRents.get(0).getLimitDate());
+            mainClientFrame.getRentPrice1Value().setText(String.format("$%.2f", userRents.get(0).getPrice()));
+
+            int idVehicle2 = userRents.get(1).getIdVehicle();
+            Vehicle vehicle2 = Vehicle.getVehicleDB(idVehicle2);
+            String vehicle2Info = String.format("%s %s %s", vehicle2.getType(), vehicle2.getVehicleBrand(), vehicle2.getDescription());
+            mainClientFrame.getInfoVehicle2value().setText(vehicle2Info);
+            mainClientFrame.getLicense2rentValue().setText(vehicle2.getLicensePlate());
+            mainClientFrame.getModel2rentValue().setText("" + vehicle2.getModel());
+            mainClientFrame.getOrderDate2RentValue().setText("" + userRents.get(1).getOrderDate());
+            mainClientFrame.getLimitDate2rentValue().setText("" + userRents.get(1).getLimitDate());
+            mainClientFrame.getRentPrice2Value().setText(String.format("$%.2f", userRents.get(1).getPrice()));
+            mainClientFrame.getTabbedPane().setSelectedIndex(2);
+        }
+    }
+
+    public static void returnVehicle1() {
+        ArrayList<Rent> userRents = Rent.getUserRents(user.getId());
+        int idVehicle1 = userRents.get(0).getIdVehicle();
+        Rent.returnVehicle(idVehicle1);
+        fillVehiclesTable();
     }
 }

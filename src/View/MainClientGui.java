@@ -4,8 +4,10 @@ import Controller.MainClientController;
 import com.toedter.calendar.JDateChooser;
 import java.time.Instant;
 import java.util.Date;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -154,6 +156,151 @@ public class MainClientGui extends javax.swing.JFrame {
         this.invoiceTextArea = invoiceTextArea;
     }
 
+    public JLabel getInfoVehicle1value() {
+        return infoVehicle1value;
+    }
+
+    public void setInfoVehicle1value(JLabel infoVehicle1value) {
+        this.infoVehicle1value = infoVehicle1value;
+    }
+
+    public JLabel getInfoVehicle2value() {
+        return infoVehicle2value;
+    }
+
+    public void setInfoVehicle2value(JLabel infoVehicle2value) {
+        this.infoVehicle2value = infoVehicle2value;
+    }
+
+    public JLabel getLicense1Value() {
+        return license1Value;
+    }
+
+    public void setLicense1Value(JLabel license1Value) {
+        this.license1Value = license1Value;
+    }
+
+    public JLabel getLicense2rentValue() {
+        return license2rentValue;
+    }
+
+    public void setLicense2rentValue(JLabel license2rentValue) {
+        this.license2rentValue = license2rentValue;
+    }
+
+    public JTextField getOrderDate1RentValue() {
+        return orderDate1RentValue;
+    }
+
+    public void setOrderDate1RentValue(JTextField orderDate1RentValue) {
+        this.orderDate1RentValue = orderDate1RentValue;
+    }
+
+
+    public JTextField getLimitDate1rentValue() {
+        return limitDate1rentValue;
+    }
+
+    public void setLimitDate1rentValue(JTextField limitDate1rentValue) {
+        this.limitDate1rentValue = limitDate1rentValue;
+    }
+
+    public JTextField getLimitDate2rentValue() {
+        return limitDate2rentValue;
+    }
+
+    public void setLimitDate2rentValue(JTextField limitDate2rentValue) {
+        this.limitDate2rentValue = limitDate2rentValue;
+    }
+
+    public JLabel getModel1Value() {
+        return model1Value;
+    }
+
+    public void setModel1Value(JLabel model1Value) {
+        this.model1Value = model1Value;
+    }
+
+    public JLabel getModel2rentValue() {
+        return model2rentValue;
+    }
+
+    public void setModel2rentValue(JLabel model2rentValue) {
+        this.model2rentValue = model2rentValue;
+    }
+
+    public JLabel getRentPrice1Value() {
+        return rentPrice1Value;
+    }
+
+    public void setRentPrice1Value(JLabel rentPrice1Value) {
+        this.rentPrice1Value = rentPrice1Value;
+    }
+
+    public JLabel getRentPrice2Value() {
+        return rentPrice2Value;
+    }
+
+    public void setRentPrice2Value(JLabel rentPrice2Value) {
+        this.rentPrice2Value = rentPrice2Value;
+    }
+
+    public JLabel getLicense2rentLabel() {
+        return license2rentLabel;
+    }
+
+    public void setLicense2rentLabel(JLabel license2rentLabel) {
+        this.license2rentLabel = license2rentLabel;
+    }
+
+    public JLabel getLimitDate2rentLabel() {
+        return limitDate2rentLabel;
+    }
+
+    public void setLimitDate2rentLabel(JLabel limitDate2rentLabel) {
+        this.limitDate2rentLabel = limitDate2rentLabel;
+    }
+
+    public JLabel getModel2rentLabel() {
+        return model2rentLabel;
+    }
+
+    public void setModel2rentLabel(JLabel model2rentLabel) {
+        this.model2rentLabel = model2rentLabel;
+    }
+
+    public JTextField getOrderDate2RentValue() {
+        return orderDate2RentValue;
+    }
+
+    public void setOrderDate2RentValue(JTextField orderDate2RentValue) {
+        this.orderDate2RentValue = orderDate2RentValue;
+    }
+
+    public JLabel getOrderDate2rentLabel() {
+        return orderDate2rentLabel;
+    }
+
+    public void setOrderDate2rentLabel(JLabel orderDate2rentLabel) {
+        this.orderDate2rentLabel = orderDate2rentLabel;
+    }
+
+    public JLabel getRentPrice2label() {
+        return rentPrice2label;
+    }
+
+    public void setRentPrice2label(JLabel rentPrice2label) {
+        this.rentPrice2label = rentPrice2label;
+    }
+
+    public JButton getReturn2Button() {
+        return return2Button;
+    }
+
+    public void setReturn2Button(JButton return2Button) {
+        this.return2Button = return2Button;
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -211,6 +358,33 @@ public class MainClientGui extends javax.swing.JFrame {
         vehicleInfoTitleLabel1 = new javax.swing.JLabel();
         downloadButton = new javax.swing.JButton();
         myRentsPanel = new javax.swing.JPanel();
+        myrentsTitleLabel = new javax.swing.JLabel();
+        return1Button = new javax.swing.JButton();
+        separator1 = new javax.swing.JSeparator();
+        license2rentLabel = new javax.swing.JLabel();
+        model2rentLabel = new javax.swing.JLabel();
+        limitDate2rentLabel = new javax.swing.JLabel();
+        limitDate2rentValue = new javax.swing.JTextField();
+        orderDate2RentValue = new javax.swing.JTextField();
+        orderDate2rentLabel = new javax.swing.JLabel();
+        rentPrice2label = new javax.swing.JLabel();
+        return2Button = new javax.swing.JButton();
+        infoVehicle1value = new javax.swing.JLabel();
+        infoVehicle2value = new javax.swing.JLabel();
+        model2rentValue = new javax.swing.JLabel();
+        license2rentValue = new javax.swing.JLabel();
+        rentPrice2Value = new javax.swing.JLabel();
+        rentPrice1Value = new javax.swing.JLabel();
+        orderDate1rentLabel8 = new javax.swing.JLabel();
+        orderDate1RentValue = new javax.swing.JTextField();
+        limitDate1rentValue = new javax.swing.JTextField();
+        limitDate1rentLabel = new javax.swing.JLabel();
+        orderDate1rentLabel = new javax.swing.JLabel();
+        model1Value = new javax.swing.JLabel();
+        model1rentLabel = new javax.swing.JLabel();
+        license1Value = new javax.swing.JLabel();
+        license1rentLabel = new javax.swing.JLabel();
+        cancelMyRentsButton = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -224,6 +398,7 @@ public class MainClientGui extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(2000, 250));
         setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -253,7 +428,7 @@ public class MainClientGui extends javax.swing.JFrame {
 
         myRentsLabel.setFont(new java.awt.Font("Droid Sans", 1, 18)); // NOI18N
         myRentsLabel.setForeground(new java.awt.Color(250, 249, 249));
-        myRentsLabel.setText("Rents");
+        myRentsLabel.setText("My rents");
         myRentsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 myRentsLabelMouseClicked(evt);
@@ -289,15 +464,13 @@ public class MainClientGui extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(brandLabel))
                     .addGroup(navBarPanelLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
+                        .addGap(24, 24, 24)
                         .addGroup(navBarPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(vehiclesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(vehicleSeparator)
+                            .addComponent(vehiclesLabel)
+                            .addComponent(myRentsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(logOutLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(rentSeparator)
-                            .addComponent(logOutLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(navBarPanelLayout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(myRentsLabel)))
+                            .addComponent(vehicleSeparator))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         navBarPanelLayout.setVerticalGroup(
@@ -312,8 +485,8 @@ public class MainClientGui extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(myRentsLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rentSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                .addComponent(rentSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
                 .addComponent(logOutLabel)
                 .addGap(26, 26, 26))
         );
@@ -550,6 +723,8 @@ public class MainClientGui extends javax.swing.JFrame {
 
         invoiceTextArea.setColumns(20);
         invoiceTextArea.setRows(5);
+        invoiceTextArea.setDisabledTextColor(new java.awt.Color(36, 36, 35));
+        invoiceTextArea.setEnabled(false);
         jScrollPane1.setViewportView(invoiceTextArea);
 
         vehicleInfoTitleLabel1.setFont(new java.awt.Font("Droid Sans", 1, 20)); // NOI18N
@@ -707,15 +882,244 @@ public class MainClientGui extends javax.swing.JFrame {
 
         myRentsPanel.setBackground(new java.awt.Color(250, 250, 255));
 
+        myrentsTitleLabel.setFont(new java.awt.Font("Droid Sans", 1, 22)); // NOI18N
+        myrentsTitleLabel.setForeground(new java.awt.Color(36, 36, 35));
+        myrentsTitleLabel.setText("My rents");
+
+        return1Button.setText("Return vehicle");
+        return1Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                return1ButtonActionPerformed(evt);
+            }
+        });
+
+        separator1.setForeground(new java.awt.Color(36, 36, 35));
+        separator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        separator1.setToolTipText("");
+        separator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(36, 36, 35), 2));
+
+        license2rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        license2rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        license2rentLabel.setText("License Plate");
+
+        model2rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        model2rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        model2rentLabel.setText("Model");
+
+        limitDate2rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        limitDate2rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        limitDate2rentLabel.setText("Limit date");
+
+        limitDate2rentValue.setFont(new java.awt.Font("Droid Sans", 0, 12)); // NOI18N
+        limitDate2rentValue.setDisabledTextColor(new java.awt.Color(36, 36, 35));
+        limitDate2rentValue.setEnabled(false);
+
+        orderDate2RentValue.setFont(new java.awt.Font("Droid Sans", 0, 12)); // NOI18N
+        orderDate2RentValue.setDisabledTextColor(new java.awt.Color(36, 36, 35));
+        orderDate2RentValue.setEnabled(false);
+
+        orderDate2rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        orderDate2rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        orderDate2rentLabel.setText("Order date");
+
+        rentPrice2label.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        rentPrice2label.setForeground(new java.awt.Color(36, 36, 35));
+        rentPrice2label.setText("Rent price");
+
+        return2Button.setText("Return vehicle");
+
+        infoVehicle1value.setFont(new java.awt.Font("Droid Sans", 1, 22)); // NOI18N
+        infoVehicle1value.setForeground(new java.awt.Color(36, 36, 35));
+        infoVehicle1value.setText("Vehicle");
+
+        infoVehicle2value.setFont(new java.awt.Font("Droid Sans", 1, 22)); // NOI18N
+        infoVehicle2value.setForeground(new java.awt.Color(36, 36, 35));
+        infoVehicle2value.setText("Vehicle");
+
+        model2rentValue.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        model2rentValue.setForeground(new java.awt.Color(36, 36, 35));
+        model2rentValue.setText("Model");
+
+        license2rentValue.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        license2rentValue.setForeground(new java.awt.Color(36, 36, 35));
+        license2rentValue.setText("License Plate");
+
+        rentPrice2Value.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        rentPrice2Value.setForeground(new java.awt.Color(36, 36, 35));
+        rentPrice2Value.setText("Rent price");
+
+        rentPrice1Value.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        rentPrice1Value.setForeground(new java.awt.Color(36, 36, 35));
+        rentPrice1Value.setText("Rent price");
+
+        orderDate1rentLabel8.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        orderDate1rentLabel8.setForeground(new java.awt.Color(36, 36, 35));
+        orderDate1rentLabel8.setText("Rent price");
+
+        orderDate1RentValue.setFont(new java.awt.Font("Droid Sans", 0, 12)); // NOI18N
+        orderDate1RentValue.setDisabledTextColor(new java.awt.Color(36, 36, 35));
+        orderDate1RentValue.setEnabled(false);
+
+        limitDate1rentValue.setFont(new java.awt.Font("Droid Sans", 0, 12)); // NOI18N
+        limitDate1rentValue.setDisabledTextColor(new java.awt.Color(36, 36, 35));
+        limitDate1rentValue.setEnabled(false);
+
+        limitDate1rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        limitDate1rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        limitDate1rentLabel.setText("Limit date");
+
+        orderDate1rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        orderDate1rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        orderDate1rentLabel.setText("Order date");
+
+        model1Value.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        model1Value.setForeground(new java.awt.Color(36, 36, 35));
+        model1Value.setText("Model");
+
+        model1rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        model1rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        model1rentLabel.setText("Model");
+
+        license1Value.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        license1Value.setForeground(new java.awt.Color(36, 36, 35));
+        license1Value.setText("License Plate");
+
+        license1rentLabel.setFont(new java.awt.Font("Droid Sans", 1, 14)); // NOI18N
+        license1rentLabel.setForeground(new java.awt.Color(36, 36, 35));
+        license1rentLabel.setText("License Plate");
+
+        cancelMyRentsButton.setText("Cancel");
+
         javax.swing.GroupLayout myRentsPanelLayout = new javax.swing.GroupLayout(myRentsPanel);
         myRentsPanel.setLayout(myRentsPanelLayout);
         myRentsPanelLayout.setHorizontalGroup(
             myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(myRentsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(myRentsPanelLayout.createSequentialGroup()
+                        .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(myRentsPanelLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(infoVehicle1value)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myRentsPanelLayout.createSequentialGroup()
+                                            .addGap(12, 12, 12)
+                                            .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(orderDate1rentLabel)
+                                                .addComponent(orderDate1RentValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                                            .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(limitDate1rentValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(limitDate1rentLabel))
+                                            .addGap(72, 72, 72)))
+                                    .addGroup(myRentsPanelLayout.createSequentialGroup()
+                                        .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(license1rentLabel)
+                                            .addComponent(license1Value)
+                                            .addComponent(model1rentLabel)
+                                            .addComponent(model1Value))
+                                        .addGap(45, 45, 45))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myRentsPanelLayout.createSequentialGroup()
+                                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(orderDate1rentLabel8)
+                                    .addComponent(return1Button, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(rentPrice1Value))
+                                .addGap(29, 29, 29)))
+                        .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(myRentsPanelLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(myRentsPanelLayout.createSequentialGroup()
+                                        .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(orderDate2rentLabel)
+                                            .addComponent(orderDate2RentValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(rentPrice2label)
+                                            .addComponent(rentPrice2Value))
+                                        .addGap(83, 83, 83)
+                                        .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(limitDate2rentValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(limitDate2rentLabel)))
+                                    .addComponent(return2Button, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(infoVehicle2value)
+                            .addComponent(license2rentValue)
+                            .addComponent(model2rentLabel)
+                            .addComponent(model2rentValue)
+                            .addComponent(license2rentLabel)))
+                    .addComponent(myrentsTitleLabel))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myRentsPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cancelMyRentsButton)
+                .addGap(30, 30, 30))
         );
         myRentsPanelLayout.setVerticalGroup(
             myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 549, Short.MAX_VALUE)
+            .addGroup(myRentsPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(myrentsTitleLabel)
+                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(myRentsPanelLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(myRentsPanelLayout.createSequentialGroup()
+                                .addComponent(infoVehicle2value)
+                                .addGap(18, 18, 18)
+                                .addComponent(license2rentLabel)
+                                .addGap(7, 7, 7)
+                                .addComponent(license2rentValue)
+                                .addGap(37, 37, 37)
+                                .addComponent(model2rentLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(model2rentValue)
+                                .addGap(37, 37, 37)
+                                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(limitDate2rentLabel)
+                                    .addComponent(orderDate2rentLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(limitDate2rentValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(orderDate2RentValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(45, 45, 45)
+                                .addComponent(rentPrice2label)
+                                .addGap(18, 18, 18)
+                                .addComponent(rentPrice2Value)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(return2Button))
+                            .addGroup(myRentsPanelLayout.createSequentialGroup()
+                                .addComponent(infoVehicle1value)
+                                .addGap(18, 18, 18)
+                                .addComponent(license1rentLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(license1Value)
+                                .addGap(40, 40, 40)
+                                .addComponent(model1rentLabel)
+                                .addGap(18, 18, 18)
+                                .addComponent(model1Value)
+                                .addGap(43, 43, 43)
+                                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(orderDate1rentLabel)
+                                    .addComponent(limitDate1rentLabel))
+                                .addGap(18, 18, 18)
+                                .addGroup(myRentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(limitDate1rentValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(orderDate1RentValue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 34, 34)
+                                .addComponent(orderDate1rentLabel8)
+                                .addGap(18, 18, 18)
+                                .addComponent(rentPrice1Value)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                .addComponent(return1Button)))
+                        .addGap(10, 10, 10))
+                    .addGroup(myRentsPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(17, 17, 17)
+                .addComponent(cancelMyRentsButton)
+                .addGap(25, 25, 25))
         );
 
         tabbedPane.addTab("tab3", myRentsPanel);
@@ -735,7 +1139,8 @@ public class MainClientGui extends javax.swing.JFrame {
     }//GEN-LAST:event_vehiclesLabelMousePressed
 
     private void myRentsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRentsLabelMouseClicked
-        tabbedPane.setSelectedIndex(2);
+        MainClientController.validateRents();
+        
     }//GEN-LAST:event_myRentsLabelMouseClicked
 
     private void myRentsLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myRentsLabelMousePressed
@@ -803,6 +1208,13 @@ public class MainClientGui extends javax.swing.JFrame {
         MainClientController.downloadInvoice();
     }//GEN-LAST:event_downloadButtonActionPerformed
 
+    private void return1ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_return1ButtonActionPerformed
+        MainClientController.returnVehicle1();
+        tabbedPane.setSelectedIndex(0);
+        vehicleSeparator.setVisible(true);
+        rentSeparator.setVisible(false);
+    }//GEN-LAST:event_return1ButtonActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -845,6 +1257,7 @@ public class MainClientGui extends javax.swing.JFrame {
     private javax.swing.JTextField brandTextField;
     private javax.swing.JLabel brandVehicleLabel;
     private javax.swing.JButton cancelButton;
+    private javax.swing.JButton cancelMyRentsButton;
     private javax.swing.JLabel catalogueLabel;
     private javax.swing.JLabel catalogueLabel1;
     private javax.swing.JPanel cataloguePanel;
@@ -852,30 +1265,55 @@ public class MainClientGui extends javax.swing.JFrame {
     private javax.swing.JTextArea descriptionTextArea;
     private javax.swing.JButton downloadButton;
     private javax.swing.JCheckBox helmetCheckBox;
+    private javax.swing.JLabel infoVehicle1value;
+    private javax.swing.JLabel infoVehicle2value;
     private javax.swing.JCheckBox insuranceCheckBox;
     private javax.swing.JTextArea invoiceTextArea;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JCheckBox leaveCheckBox;
+    private javax.swing.JLabel license1Value;
+    private javax.swing.JLabel license1rentLabel;
+    private javax.swing.JLabel license2rentLabel;
+    private javax.swing.JLabel license2rentValue;
     private javax.swing.JLabel licenseLabel;
     private javax.swing.JTextField licenseTextField;
+    private javax.swing.JLabel limitDate1rentLabel;
+    private javax.swing.JTextField limitDate1rentValue;
+    private javax.swing.JLabel limitDate2rentLabel;
+    private javax.swing.JTextField limitDate2rentValue;
     private javax.swing.JLabel logOutLabel;
     private javax.swing.JLabel mileageLabel;
     private javax.swing.JTextField mileageTextField;
+    private javax.swing.JLabel model1Value;
+    private javax.swing.JLabel model1rentLabel;
+    private javax.swing.JLabel model2rentLabel;
+    private javax.swing.JLabel model2rentValue;
     private javax.swing.JLabel modelLabel;
     private javax.swing.JTextField modelTextField;
     private javax.swing.JLabel myRentsLabel;
     private javax.swing.JPanel myRentsPanel;
+    private javax.swing.JLabel myrentsTitleLabel;
     private javax.swing.JPanel navBarPanel;
+    private javax.swing.JTextField orderDate1RentValue;
+    private javax.swing.JLabel orderDate1rentLabel;
+    private javax.swing.JLabel orderDate1rentLabel8;
+    private javax.swing.JTextField orderDate2RentValue;
+    private javax.swing.JLabel orderDate2rentLabel;
     private com.toedter.calendar.JDateChooser orderDateChooser;
     private javax.swing.JLabel orderLabel;
     private javax.swing.JButton previewPriceButton;
     private javax.swing.JTextField previewPriceTextField;
     private javax.swing.JButton rentButton;
+    private javax.swing.JLabel rentPrice1Value;
+    private javax.swing.JLabel rentPrice2Value;
+    private javax.swing.JLabel rentPrice2label;
     private javax.swing.JSeparator rentSeparator;
     private javax.swing.JPanel rentVehiclePanel;
     private javax.swing.JLabel rentsTitleLabel;
     private javax.swing.JSeparator rentseparator;
+    private javax.swing.JButton return1Button;
+    private javax.swing.JButton return2Button;
     private com.toedter.calendar.JDateChooser returnDateChooser;
     private javax.swing.JLabel returnLabel;
     private javax.swing.JCheckBox roadKitCheckBox;
@@ -884,6 +1322,7 @@ public class MainClientGui extends javax.swing.JFrame {
     private javax.swing.JLabel searchLabel;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JSeparator separator;
+    private javax.swing.JSeparator separator1;
     private javax.swing.JButton showAllButton;
     private javax.swing.JTabbedPane tabbedPane;
     private javax.swing.JLabel vehicleInfoTitleLabel;

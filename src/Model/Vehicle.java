@@ -123,6 +123,32 @@ public class Vehicle {
         return vehicles;
     }
 
+    public static Vehicle getVehicleDB(int id) {
+        String stringsql = "SELECT * FROM vehicles WHERE id=?";
+        try {
+            PreparedStatement query = c.prepareStatement(stringsql);
+            query.setInt(1, id);
+
+            ResultSet rs = query.executeQuery();
+            while (rs.next()) {
+                Vehicle v = new Vehicle();
+                v.setId(rs.getInt("id"));
+                v.setLicensePlate(rs.getString("license_plate"));
+                v.setVehicleBrand(rs.getString("brand"));
+                v.setDescription(rs.getString("description"));
+                v.setType(rs.getString("vehicle_type"));
+                v.setModel(rs.getInt("model"));
+                v.setMileage(rs.getInt("mileage"));
+                v.setRented(rs.getBoolean("rented"));
+                return v;
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
+        return null;
+    }
+
     public static void addVehicle(Vehicle v, int vehicleType) {
         String stringSql = "INSERT INTO vehicles (license_plate, model, brand, description, vehicle_type, mileage, rented) VALUES(?,?,?,?,?,?,?)";
         try {

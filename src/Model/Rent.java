@@ -111,7 +111,7 @@ public class Rent {
 
     public static ArrayList<Rent> getUserRents(int id) {
         ArrayList<Rent> userRents = new ArrayList<>();
-        String stringQuery = "SELECT * FROM rents WHERE id_user=?";
+        String stringQuery = "SELECT * FROM rents WHERE id_user=? AND return_date IS NULL";
         try {
             PreparedStatement query = c.prepareStatement(stringQuery);
             query.setInt(1, id);
@@ -178,5 +178,54 @@ public class Rent {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void returnVehicle(int idVehicle) {
+        String sqlUpdateDate = "UPDATE rents SET return_date=? WHERE id_vehicle=?";
+        String sqlUpdateRented = "UPDATE vehicles SET rented=? WHERE id=?";
+
+        try {
+            PreparedStatement query = c.prepareStatement(sqlUpdateDate);
+            Date actualDate = new Date();
+            query.setDate(1, new java.sql.Date(actualDate.getTime()));
+            query.setInt(2, idVehicle);
+            query.executeUpdate();
+
+            query = c.prepareStatement(sqlUpdateRented);
+            query.setBoolean(1, false);
+            query.setInt(2, idVehicle);
+            query.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Vehicle returned successfully.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    /*public static HashMap<Rent, Vehicle> getRentsValue(int idVehicle) {
+        HashMap<Vehicle, Rent> vehiclesByRent = new HashMap<>();
+
+        String stringsql = "SELECT vehicles.vehicle_type, vehicles.brand, vehicles.license_plate, vehicles.model, rent.order_date, rent.limit_date, rent.price FROM rent INNER JOIN vehicles ON rent.id_vehicle = vehicles.id";
+        try {
+            PreparedStatement query = c.prepareStatement(stringsql);
+            ResultSet rs = query.executeQuery();
+            while (rs.next()) {
+                Vehicle v = new Vehicle();
+                Rent r = new Rent();
+                v.setType(rs.getString("vehicles.vehicle_type"));
+                v.setVehicleBrand(rs.getString("vehicles.brand"));
+                v.setLicensePlate(rs.getString("vehicles.license_plate"));
+                v.setModel(rs.getInt("vehicles.model"));
+                r.setOrderDate(rs.getDate("rent.oder_date"));
+                r.setLimitDate(rs.getDate("rent.limit_date"));
+                r.setPrice(rs.getDouble("rent.price"));
+
+                vehiclesByRent.put(v, r);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return vehiclesByRent;
+    }*/
 
 }
