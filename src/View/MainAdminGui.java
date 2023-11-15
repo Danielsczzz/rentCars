@@ -2,6 +2,8 @@ package View;
 
 import Controller.MainAdminController;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -50,6 +52,13 @@ public class MainAdminGui extends javax.swing.JFrame {
         Scrolltable = new javax.swing.JScrollPane();
         vehiclesTable = new javax.swing.JTable();
         rentsPanel = new javax.swing.JPanel();
+        catalogueLabel = new javax.swing.JLabel();
+        separator1 = new javax.swing.JSeparator();
+        billLabel = new javax.swing.JLabel();
+        valueBillLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        rentsTable = new javax.swing.JTable();
+        cancelButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(2000, 250));
@@ -403,15 +412,77 @@ public class MainAdminGui extends javax.swing.JFrame {
 
         TabbedPane.addTab("tab2", vehiclesPanel);
 
+        rentsPanel.setBackground(new java.awt.Color(238, 240, 242));
+
+        catalogueLabel.setFont(new java.awt.Font("Droid Sans", 1, 24)); // NOI18N
+        catalogueLabel.setForeground(new java.awt.Color(36, 36, 35));
+        catalogueLabel.setText("Rents");
+
+        separator1.setForeground(new java.awt.Color(36, 36, 35));
+        separator1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(36, 36, 35), 2));
+
+        billLabel.setFont(new java.awt.Font("Droid Sans", 0, 16)); // NOI18N
+        billLabel.setForeground(new java.awt.Color(36, 36, 35));
+        billLabel.setText("Bill value: ");
+
+        valueBillLabel.setFont(new java.awt.Font("Droid Sans", 0, 16)); // NOI18N
+        valueBillLabel.setForeground(new java.awt.Color(255, 0, 0));
+        valueBillLabel.setText("Value");
+
+        rentsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Id rent", "Id client", "Id vehicle", "Order date", "Return date", "Limit date", "Price"
+            }
+        ));
+        jScrollPane1.setViewportView(rentsTable);
+
+        cancelButton.setText("Cancel");
+
         javax.swing.GroupLayout rentsPanelLayout = new javax.swing.GroupLayout(rentsPanel);
         rentsPanel.setLayout(rentsPanelLayout);
         rentsPanelLayout.setHorizontalGroup(
             rentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(rentsPanelLayout.createSequentialGroup()
+                .addGroup(rentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(rentsPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(billLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(valueBillLabel))
+                    .addGroup(rentsPanelLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(catalogueLabel))
+                    .addGroup(rentsPanelLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(rentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cancelButton)
+                            .addGroup(rentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 765, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         rentsPanelLayout.setVerticalGroup(
             rentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 559, Short.MAX_VALUE)
+            .addGroup(rentsPanelLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(catalogueLabel)
+                .addGap(18, 18, 18)
+                .addComponent(separator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(rentsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(billLabel)
+                    .addComponent(valueBillLabel))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(cancelButton)
+                .addGap(24, 24, 24))
         );
 
         TabbedPane.addTab("tab1", rentsPanel);
@@ -476,14 +547,37 @@ public class MainAdminGui extends javax.swing.JFrame {
     public void setVehiclesTable(JTable vehiclesTable) {
         this.vehiclesTable = vehiclesTable;
     }
-    
+
+    public JTable getRentsTable() {
+        return rentsTable;
+    }
+
+    public void setRentsTable(JTable rentsTable) {
+        this.rentsTable = rentsTable;
+    }
+
+    public JTabbedPane getTabbedPane() {
+        return TabbedPane;
+    }
+
+    public void setTabbedPane(JTabbedPane TabbedPane) {
+        this.TabbedPane = TabbedPane;
+    }
+
+    public JLabel getValueBillLabel() {
+        return valueBillLabel;
+    }
+
+    public void setValueBillLabel(JLabel valueBillLabel) {
+        this.valueBillLabel = valueBillLabel;
+    }
     
     private void vehiclesLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vehiclesLabelMouseClicked
         TabbedPane.setSelectedIndex(0);
     }//GEN-LAST:event_vehiclesLabelMouseClicked
 
     private void rentLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rentLabelMouseClicked
-        TabbedPane.setSelectedIndex(1);
+        MainAdminController.showRentsPanel();
     }//GEN-LAST:event_rentLabelMouseClicked
 
     private void vehiclesLabelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vehiclesLabelMousePressed
@@ -544,14 +638,18 @@ public class MainAdminGui extends javax.swing.JFrame {
     private javax.swing.JPanel VehicleInternal;
     private javax.swing.JButton addButton;
     private javax.swing.JLabel addVehicleLabel;
+    private javax.swing.JLabel billLabel;
     private javax.swing.JLabel brandLabel;
     private javax.swing.JTextField brandTextField;
     private javax.swing.JLabel brandVehicleLabel;
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JLabel catalogueLabel;
     private javax.swing.JButton clearButton;
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel descriptionLabel;
     private javax.swing.JTextArea descriptionTextArea;
     private javax.swing.JPanel infoVehiclePanel;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel licenseLabel;
     private javax.swing.JTextField licenseTextField;
     private javax.swing.JLabel logOutLabel;
@@ -563,10 +661,13 @@ public class MainAdminGui extends javax.swing.JFrame {
     private javax.swing.JLabel rentLabel;
     private javax.swing.JSeparator rentSeparator;
     private javax.swing.JPanel rentsPanel;
+    private javax.swing.JTable rentsTable;
     private javax.swing.JScrollPane scrollPane;
     private javax.swing.JSeparator separator;
+    private javax.swing.JSeparator separator1;
     private javax.swing.JPanel tablePanel;
     private javax.swing.JButton updateButtom;
+    private javax.swing.JLabel valueBillLabel;
     private javax.swing.JSeparator vehicleSeparator;
     private javax.swing.JLabel vehicleTypeLabel;
     private javax.swing.JLabel vehiclesLabel;

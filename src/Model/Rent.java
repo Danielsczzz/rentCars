@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -107,6 +108,40 @@ public class Rent {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static ArrayList<Rent> getAllRentsDB() {
+        ArrayList<Rent> rents = new ArrayList<>();
+        try {
+            Statement s = c.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM rents");
+            while (rs.next()) {
+                Rent r = new Rent();
+                r.setId(rs.getInt("id_rent"));
+                r.setIdUser(rs.getInt("id_user"));
+                r.setIdVehicle(rs.getInt("id_vehicle"));
+                r.setOrderDate(rs.getDate("order_date"));
+                r.setReturnDate(rs.getDate("return_date"));
+                r.setLimitDate(rs.getDate("limit_date"));
+                r.setPrice(rs.getDouble("price"));
+                rents.add(r);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+
+        }
+        return rents;
+    }
+
+    public static double getTotalBill() {
+        double total = 0;
+
+        ArrayList<Rent> rents = Rent.getAllRentsDB();
+        for (Rent r : rents) {
+            total += r.getPrice();
+        }
+
+        return total;
     }
 
     public static ArrayList<Rent> getUserRents(int id) {

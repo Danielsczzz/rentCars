@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Rent;
 import Model.Vehicle;
 import View.MainAdminGui;
 import java.util.ArrayList;
@@ -123,6 +124,28 @@ public class MainAdminController {
             MainAdminController.fillVehiclesTable();
         }
 
+    }
+
+    public static void showRentsPanel() {
+        DefaultTableModel tableData = (DefaultTableModel) mainAdminFrame.getRentsTable().getModel();
+        tableData.setNumRows(0);
+        ArrayList<Rent> rents = Rent.getAllRentsDB();
+
+        for (Rent r : rents) {
+            Object[] row = new Object[7];
+            row[0] = r.getId();
+            row[1] = r.getIdUser();
+            row[2] = r.getIdVehicle();
+            row[3] = r.getOrderDate();
+            row[4] = r.getReturnDate();
+            row[5] = r.getLimitDate();
+            row[6] = String.format("$%.2f", r.getPrice());
+
+            tableData.addRow(row);
+        }
+        String totalPrice = String.format("$%.2f", Rent.getTotalBill());
+        mainAdminFrame.getValueBillLabel().setText(totalPrice);
+        mainAdminFrame.getTabbedPane().setSelectedIndex(1);
     }
 
     public static void eventDelete() {
